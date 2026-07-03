@@ -7,7 +7,7 @@
 [![Groq](https://img.shields.io/badge/Groq-Llama_3.3_70B-orange?style=flat-square)](https://groq.com)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 
-**Live Demo:** `REPLACE_WITH_YOUR_URL`
+**Live Demo:** `https://model-selection-decision-engine-o5hzrvmjd-sankalpdusane.vercel.app`
 
 ---
 
