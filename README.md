@@ -13,20 +13,20 @@
 
 ## Screenshots
 
-**Dark mode — Empty state (two-column layout)**
-![Dark mode homepage with form and empty state panel](docs/screenshot_01_home.png)
+### Home
+![Home](docs/screenshot_01_home.png)
 
-**Dark mode — Scenario filled in, ready to simulate**
-![Form filled with Day-7 retention scenario, High urgency selected, Run Decision Simulation button](docs/screenshot_02_form_filled.png)
+### Form Filled
+![Form Filled](docs/screenshot_02_form_filled.png)
 
-**Light mode — Same view with toggle switched**
-![Light mode with white cards, same form content, moon toggle button](docs/screenshot_03_light_mode.png)
+### Light Mode
+![Light Mode](docs/screenshot_03_light_mode.png)
 
-**Results — Strategic Options tab (3-column grid)**
-![Three option cards side by side: Recommended glows blue, others recede with circular confidence rings](docs/screenshot_04_results.png)
+### Results
+![Results](docs/screenshot_04_results.png)
 
-**Results — Analysis tab (rationale + adversarial challenge)**
-![Analysis tab showing recommendation rationale, honest tradeoff, adversarial challenge card, PDF export button](docs/screenshot_05_analysis.png)
+### Analysis
+![Analysis](docs/screenshot_05_analysis.png)
 
 ---
 
