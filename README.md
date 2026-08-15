@@ -82,22 +82,22 @@ This is the right question. Here is the precise answer:
 │                        Next.js 16 (App Router)                  │
 │                         Turbopack dev build                     │
 ├──────────────────────────────┬──────────────────────────────────┤
-│         Frontend             │            API Routes             │
-│  React + Framer Motion       │                                   │
-│  Conditional tab layout      │  POST /api/simulate               │
-│  (2-col → tabbed on result)  │    ├── Rate limit check           │
-│  AnimatePresence transitions │    ├── Cache lookup (30min TTL)   │
-│  CircleProgress SVG rings    │    ├── Memory injection (5 past)  │
-│  Dark / Light mode toggle    │    ├── Groq GPT OSS 20B           │
-│  PDF export via jsPDF        │    ├── Response validation        │
-│                              │    └── SQLite write               │
-│                              │                                   │
-│                              │  POST /api/adversarial            │
-│                              │    └── Groq GPT OSS 20B           │
-│                              │        (skeptical board member)   │
-│                              │                                   │
-│                              │  GET  /api/history                │
-│                              │  POST /api/outcome                │
+│         Frontend             │            API Routes            │
+│  React + Framer Motion       │                                  │
+│  Conditional tab layout      │  POST /api/simulate              │
+│  (2-col → tabbed on result)  │    ├── Rate limit check          │
+│  AnimatePresence transitions │    ├── Cache lookup (30min TTL)  │
+│  CircleProgress SVG rings    │    ├── Memory injection (5 past) │
+│  Dark / Light mode toggle    │    ├── Groq GPT OSS 20B          │
+│  PDF export via jsPDF        │    ├── Response validation       │
+│                              │    └── SQLite write              │
+│                              │                                  │
+│                              │  POST /api/adversarial           │
+│                              │    └── Groq GPT OSS 20B          │
+│                              │        (skeptical board member)  │
+│                              │                                  │
+│                              │  GET  /api/history               │
+│                              │  POST /api/outcome               │
 ├──────────────────────────────┴──────────────────────────────────┤
 │                        SQLite (better-sqlite3)                  │
 │  decisions table: session_id, scenario_summary, recommendation, │
