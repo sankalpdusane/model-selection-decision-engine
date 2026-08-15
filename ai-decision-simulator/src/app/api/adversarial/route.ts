@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
     const client = new Groq({ apiKey: process.env.GROQ_API_KEY })
     const userMsg = `Scenario: ${scenario_summary}\n\nRecommended option: ${recommended_option.title}\nApproach: ${recommended_option.approach}\nRationale: ${recommendation_rationale}\nConfidence score: ${recommended_option.confidence_score}%\nKey cons: ${recommended_option.cons?.join(', ')}\nKey risks: ${recommended_option.risks?.join(', ')}`
     const response = await client.chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
+      model: 'openai/gpt-oss-20b',
       messages: [{ role: 'system', content: ADVERSARIAL_PROMPT }, { role: 'user', content: userMsg }],
       temperature: 0.6,
       max_tokens: 500

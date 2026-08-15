@@ -4,7 +4,7 @@
 
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)](https://typescriptlang.org)
-[![Groq](https://img.shields.io/badge/Groq-Llama_3.3_70B-orange?style=flat-square)](https://groq.com)
+[![Groq](https://img.shields.io/badge/Groq-GPT_OSS_20B-orange?style=flat-square)](https://groq.com)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 
 **Live Demo:** `https://model-selection-decision-engine-o5hzrvmjd-sankalpdusane.vercel.app`
@@ -82,21 +82,22 @@ This is the right question. Here is the precise answer:
 │                        Next.js 16 (App Router)                  │
 │                         Turbopack dev build                     │
 ├──────────────────────────────┬──────────────────────────────────┤
-│         Frontend             │            API Routes            │
-│  React + Framer Motion       │                                  │
-│  Conditional tab layout      │  POST /api/simulate              │
-│  (2-col → tabbed on result)  │    ├── Rate limit check          │
-│  AnimatePresence transitions │    ├── Cache lookup (30min TTL)  │
-│  CircleProgress SVG rings    │    ├── Memory injection (5 past) │
-│  Dark / Light mode toggle    │    ├── Groq Llama 3.3 70B        │
-│                              │    └── SQLite write              │
-│                              │                                  │
-│                              │  POST /api/adversarial           │
-│                              │    └── Groq Llama 3.3 70B        │
-│                              │        (skeptical board member)  │
-│                              │                                  │
-│                              │  GET  /api/history               │
-│                              │  POST /api/outcome               │
+│         Frontend             │            API Routes             │
+│  React + Framer Motion       │                                   │
+│  Conditional tab layout      │  POST /api/simulate               │
+│  (2-col → tabbed on result)  │    ├── Rate limit check           │
+│  AnimatePresence transitions │    ├── Cache lookup (30min TTL)   │
+│  CircleProgress SVG rings    │    ├── Memory injection (5 past)  │
+│  Dark / Light mode toggle    │    ├── Groq GPT OSS 20B           │
+│  PDF export via jsPDF        │    ├── Response validation        │
+│                              │    └── SQLite write               │
+│                              │                                   │
+│                              │  POST /api/adversarial            │
+│                              │    └── Groq GPT OSS 20B           │
+│                              │        (skeptical board member)   │
+│                              │                                   │
+│                              │  GET  /api/history                │
+│                              │  POST /api/outcome                │
 ├──────────────────────────────┴──────────────────────────────────┤
 │                        SQLite (better-sqlite3)                  │
 │  decisions table: session_id, scenario_summary, recommendation, │
@@ -110,8 +111,8 @@ This is the right question. Here is the precise answer:
 
 | Decision | Rationale |
 |---|---|
-| **Llama 3.3 70B, not 8B** | Generating 3 genuinely distinct strategic options requires stronger reasoning than evaluation tasks. The 8B model produces 3 variations of the same idea under a different label. The 70B model surfaces genuinely different risk profiles. |
-| **Groq over OpenAI** | Groq's LPU inference hardware delivers ~10x lower latency on Llama 3.3 70B compared to OpenAI's API on GPT-4o for the same token count. Fast enough to feel synchronous. |
+| **GPT OSS 20B, not 8B** | Generating 3 genuinely distinct strategic options requires stronger reasoning than evaluation tasks. The 8B model produces 3 variations of the same idea under a different label. The 20B model surfaces genuinely different risk profiles. |
+| **Groq over OpenAI** | Groq's LPU inference hardware delivers ~10x lower latency on GPT OSS 20B compared to OpenAI's API on GPT-4o for the same token count. Fast enough to feel synchronous. |
 | **Forced single recommendation** | System prompt requires exactly one option with `recommended: true`. Server-side validates the parsed JSON and returns a 500 if the constraint is violated. No hedging possible at the architecture level. |
 | **Explicit `key_tradeoff` field** | Every real decision sacrifices something. Requiring this field in the JSON schema forces the model to acknowledge what is being given up, not present the recommendation as a free win. |
 | **Second adversarial agent** | One model optimising for a good recommendation and the same model critiquing it introduces confirmation bias. The adversarial call is a separate prompt with a completely different system persona — a skeptical board member who has "seen 200 product decisions fail." |
