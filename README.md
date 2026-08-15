@@ -14,19 +14,19 @@
 ## Screenshots
 
 ### Home
-![Home](ai-decision-simulator/docs/screenshot_01_home.png)
+![Home](docs/screenshot_01_home.png)
 
 ### Form Filled
-![Form Filled](ai-decision-simulator/docs/screenshot_02_form_filled.png)
+![Form Filled](docs/screenshot_02_form_filled.png)
 
 ### Light Mode
-![Light Mode](ai-decision-simulator/docs/screenshot_03_light_mode.png)
+![Light Mode](docs/screenshot_03_light_mode.png)
 
 ### Results
-![Results](ai-decision-simulator/docs/screenshot_04_results.png)
+![Results](docs/screenshot_04_results.png)
 
 ### Analysis
-![Analysis](ai-decision-simulator/docs/screenshot_05_analysis.png)
+![Analysis](docs/screenshot_05_analysis.png)
 
 ---
 
